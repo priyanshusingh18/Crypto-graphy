@@ -12,25 +12,24 @@ import icon from "../images/cryptocurrency.png";
 const Navbar = () => {
   const [activeMenu, setActiveMenu] = useState(true);
 
-  const [screenSize, setScreenSize] = useState(undefined);
+  const [screenSize, setScreenSize] = useState(window.innerWidth);
 
   const ref = useRef();
 
   useEffect(() => {
     const onBodyClick = (event) => {
-      console.log(ref.current?.contains(event.target) && screenSize >= 800);
-      if (ref.current?.contains(event.target) || screenSize >= 800) {
+      // console.log(screenSize >= 800, screenSize);
+      if (ref.current?.contains(event.target) || window.innerWidth >= 800) {
         return;
       }
-      if (screenSize <= 800) {
-        setActiveMenu(false);
-      }
+      setActiveMenu(false);
     };
     document.body.addEventListener("click", onBodyClick);
     return () => {
       document.body.removeEventListener("click", onBodyClick);
     };
   }, []);
+
   useEffect(() => {
     const handleResize = () => setScreenSize(window.innerWidth);
 
@@ -39,15 +38,16 @@ const Navbar = () => {
     handleResize();
 
     return () => window.removeEventListener("resize", handleResize);
-  }, []);
+  }, [screenSize, window.innerWidth]);
 
   useEffect(() => {
+    // console.log("WORKING", screenSize, window.innerWidth);
     if (screenSize <= 800) {
       setActiveMenu(false);
     } else {
       setActiveMenu(true);
     }
-  }, [screenSize]);
+  }, [screenSize, window.innerWidth]);
 
   return (
     <div className="nav-container">
