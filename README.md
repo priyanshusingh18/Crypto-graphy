@@ -1,3 +1,39 @@
+
+# Project
+![App Screenshot](https://res.cloudinary.com/marto1/image/upload/v1637831551/crypto-graphy_hrkyj6.png)
+
+## Live Demo
+https://crypto-graphy.netlify.app
+
+
+
+# Project Description
+
+This is a onestop destination for crypto related information, you can 
+view the top 100 cryptocurrencies along with their details, news, price history
+and deatils about crypto exchanges
+
+# What i learned
+
+Learned ant design from scratch in matter of hours,
+firgured the rapid api and its endpoints fairly quickly,
+got working knowledge of redux-toolkit 
+
+Studied ant-design, redux-toolkit, api documentaion and completed the project in 3 days
+
+
+
+
+
+## Tech Stack
+
+**Client:** React, Redux-Toolkit, React-Router, Ant-design
+
+**Api:** CoinRanking, Bing News Search
+
+
+
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
